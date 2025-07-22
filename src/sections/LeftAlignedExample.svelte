@@ -7,39 +7,69 @@
 
     const series = [
         {
-            name: "Group 1",
+            name: "White",
             data: [
-                [1990, 3],
-                [2000, 4],
-                [2010, 1],
-                [2020, 1],
+                [2007, '$245K'],
+                [2010, '$177K'],
+                [2013, '$181K'],
+                [2016, '$216K'],
+                [2019, '$219K'],
+                [2022, '$284K'],
             ],
             color: "#8427c9",
         },
         {
-            name: "Group 2",
+            name: "Other",
             data: [
-                [1990, 2],
-                [2000, 5],
-                [2010, -2],
-                [2020, 2],
+                [2007, '$87K'],
+                [2010, '$58K'],
+                [2013, '$52K'],
+                [2016, '$80K'],
+                [2019, '$86K'],
+                [2022, '$132K'],
             ],
             color: "#ff99fc",
         },
         {
-            name: "Group 3",
+            name: "Black",
             data: [
-                [1990, 4],
-                [2000, 3],
-                [2010, 0],
-                [2020, 3],
+                [2007, '$30K'],
+                [2010, '$22K'],
+                [2013, '$17K'],
+                [2016, '$21K'],
+                [2019, '$28K'],
+                [2022, '$44K'],
+            ],
+            color: "#4096fa",
+        },
+        {
+            name: "Hispanic",
+            data: [
+                [2007, '$30K'],
+                [2010, '$23K'],
+                [2013, '$18K'],
+                [2016, '$26K'],
+                [2019, '$42K'],
+                [2022, '$62K'],
+            ],
+            color: "#4096fa",
+        },
+        {
+            name: "All",
+            data: [
+                [2007, '$173K'],
+                [2010, '$105K'],
+                [2013, '$104K'],
+                [2016, '$120K'],
+                [2019, '$141K'],
+                [2022, '$193K'],
             ],
             color: "#4096fa",
         },
     ];
 
     let chart;
-    let thirdSeriesVisible = false;
+    let fifthSeriesVisible = false;
 
     let options = {
         chart: {
@@ -50,23 +80,23 @@
             borderRadius: 20,
         },
         title: {
-            text: "Another Example Chart",
+            text: "Median Total Net Worth for Households, by Race/Ethnicity",
         },
         subtitle: {
-            text: "With a subtitle! And styling!",
+            text: "Nationwide, 2007-2022",
         },
-        series: [series[0], series[1]],
+        series: [series[0], series[1], series[2], series[3]],
     };
 
-    function toggleThirdSeries() {
-        const existingSeries = chart.series.find((s) => s.name === "Group 3");
+    function toggleFifthSeries() {
+        const existingSeries = chart.series.find((s) => s.name === "All");
 
         if (existingSeries) {
             existingSeries.remove();
-            thirdSeriesVisible = false;
+            fifthSeriesVisible = false;
         } else {
             chart.addSeries(series[2]);
-            thirdSeriesVisible = true;
+            fifthSeriesVisible = true;
         }
     }
 </script>
@@ -77,50 +107,39 @@
             <div class="chart">
                 <Chart bind:chart {options} highcharts={Highcharts} />
             </div>
-            <button on:click={toggleThirdSeries} class="toggle-button">
-                {thirdSeriesVisible ? "Remove Group 3" : "Add Group 3"}
+            <button on:click={toggleFifthSeries} class="toggle-button">
+                {fifthSeriesVisible ? "Remove All" : "Add All"}
             </button>
             <div>
                 <p>
-                    You can use Svelte to add and remove data from a Highcharts
-                    chart.
+                    The chart above shows the median net worth of various households from the early 2000s to
+                    2022. Similar to the data on education, there's a noticeable gap in median net worth
+                    in minorities, which is below the median national new worth. Fortunately, trends show that
+                    Hispanic and Black households, among other minorities, are growing in wealth and progressing.
+                    The rise happens soon after the COVID pandemic, and it's likely this growth correlates to
+                    the many changes in the job industry and entrepreneurship.
                 </p>
                 <p>
-                    When you click the button above, a third group is toggled in
-                    the chart. Check out the source code to see how it's done.
-                </p>
-                <p>
-                    <strong
-                        >🤔 How might you use other HTML elements, like
-                        checkboxes or radio buttons, in a similar way to filter
-                        data?</strong
-                    >
+                    We can't conclude that it's a cause-and-effect relationship; however, there is
+                    a strong relationship between these two factors and the way they influence the opportunities
+                    and education a person can hope to achieve to.
                 </p>
             </div>
         {/snippet}
 
         {#snippet scrolly()}
             <ArticleText>
-                You might notice that this basic template doesn't have certain
-                features that are common in scrollytelling.
+                The problems minorities face seem insurmountable. Why bother worrying about it?
             </ArticleText>
 
             <ArticleText>
-                For example, you might want a component that doesn't feature a
-                sticky component at all. Or a component that is solely a sticky
-                component.
+                Being a minority doesn't make a person any less human. They deserve the same chances
+                and a voice at the table; they should be able to hold their head high
+                and not drag around a weight they can't control.
             </ArticleText>
 
             <ArticleText>
-                You might also want to add more interactivity or gamify parts of
-                your scrollytelling piece.
-            </ArticleText>
-
-            <ArticleText>
-                <strong>
-                    It's up to you to research how to create the effects and
-                    functionality that you envision!
-                </strong>
+                Numbers tell us what we need to focus on. Now it's our job to figure out what we can do about it.
             </ArticleText>
         {/snippet}
     </Scroller>
