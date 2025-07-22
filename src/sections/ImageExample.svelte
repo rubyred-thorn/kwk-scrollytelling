@@ -6,7 +6,7 @@
 <div>
     <Scroller layout="right">
         {#snippet sticky()}
-            <img class="together-img" src="were-all-in-together.jpg" alt="We're all in this together! (meme)" />
+            <img class="together-img" src="were-all-in-public\were-all-in-togehter.jpg" alt="We're all in this together! (meme)" />
             <p>We're all in this together!</p>
         {/snippet}
 
