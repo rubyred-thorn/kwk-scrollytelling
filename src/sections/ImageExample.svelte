@@ -6,7 +6,7 @@
 <div>
     <Scroller layout="right">
         {#snippet sticky()}
-            <img class="together-img" src="were-all-in-public\were-all-in-togehter.jpg" alt="We're all in this together! (meme)" />
+            <img class="together-img" src="https://github.com/rubyred-thorn/kwk-scrollytelling/blob/gh-pages/were-all-in-togehter.jpg?raw=true" alt="We're all in this together! (meme)" />
             <p>We're all in this together!</p>
         {/snippet}
 
@@ -25,7 +25,7 @@
 
 <style>
     .together-img {
-        width: 25%;
+        width: 75%;
         margin: 0px auto;
     }
 </style>
