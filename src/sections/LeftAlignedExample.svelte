@@ -95,7 +95,7 @@
             existingSeries.remove();
             fifthSeriesVisible = false;
         } else {
-            chart.addSeries(series[2]);
+            chart.addSeries(series[4]);
             fifthSeriesVisible = true;
         }
     }
